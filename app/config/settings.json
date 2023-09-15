@@ -1,0 +1,32 @@
+{
+    "db": {
+        "driver": "pgsql",
+        "host": "localhost",
+        "username": "postgres",
+        "password": "12345",
+        "dbname": "adinda-modis"
+    },
+    "repo": {
+        "path": "repo"
+    },
+    "app": {
+        "dir": "app",
+        "dateFormat": "d M Y",
+        "timeFormat": "H:i",
+        "dateTimeFormat": "d M Y - H:i",
+        "mode": "plansys",
+        "debug": "ON",
+        "oAuthGoogle": "OFF",
+        "host": "http:\/\/adinda-modis.test",
+        "url": "http:\/\/adinda-modis.test"
+    },
+    "email": {
+        "transport": {
+            "service": "none"
+        }
+    },
+    "ldap": {
+        "enable": false
+    },
+    "devInstallPassword": "$2y$10$JlXbR3RNJKHSUAG\/BPtf5eJ7vhTfFjBq63mBI9jrR5Mu\/AZ.GuGrC"
+}

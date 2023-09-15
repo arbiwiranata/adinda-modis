@@ -1,0 +1,11 @@
+.panel-child {
+    border-top: 3px solid #a5aebf;
+    border-bottom: 3px solid #a5aebf;
+    background-color: #ffffff; 
+    width: 100%; 
+    margin-top: 20px !important;
+    margin-bottom: 40px !important;
+    padding: 20px 30px 50px 30px;
+    border-radius: 2px;
+    box-shadow: 0px 5px 15px 3px #d9d9d9;
+}
