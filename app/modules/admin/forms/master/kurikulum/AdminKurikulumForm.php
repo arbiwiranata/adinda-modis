@@ -107,6 +107,14 @@ class AdminKurikulumForm extends Kurikulum {
                         'type' => 'TextField',
                     ),
                     array (
+                        'label' => 'Status',
+                        'name' => 'is_aktif',
+                        'value' => true,
+                        'onLabel' => 'Aktif',
+                        'offLabel' => 'Non Aktif',
+                        'type' => 'ToggleSwitch',
+                    ),
+                    array (
                         'type' => 'Text',
                         'value' => '<column-placeholder></column-placeholder>',
                     ),
@@ -117,31 +125,11 @@ class AdminKurikulumForm extends Kurikulum {
                         'value' => '<column-placeholder></column-placeholder>',
                     ),
                     array (
-                        'label' => 'Status',
-                        'name' => 'is_aktif',
-                        'value' => true,
-                        'onLabel' => 'Aktif',
-                        'offLabel' => 'Non Aktif',
-                        'type' => 'ToggleSwitch',
-                    ),
-                ),
-                'w1' => '50%',
-                'w2' => '50%',
-                'type' => 'ColumnField',
-            ),
-            array (
-                'totalColumns' => '4',
-                'column1' => array (
-                    array (
-                        'type' => 'Text',
-                        'value' => '<column-placeholder></column-placeholder>',
-                    ),
-                    array (
                         'name' => 'lvKurikulumAspeks',
                         'templateForm' => 'app.modules.admin.forms.master.kurikulum.AdminKurikulumKurikulumAspeksSubform',
-                        'layout' => 'Vertical',
                         'label' => 'Aspek',
-                        'labelWidth' => '12',
+                        'labelWidth' => '4',
+                        'fieldWidth' => '8',
                         'datasource' => 'dsKurikulumAspeks',
                         'singleViewOption' => array (
                             'name' => 'val',
@@ -155,10 +143,8 @@ class AdminKurikulumForm extends Kurikulum {
                         'type' => 'ListView',
                     ),
                 ),
-                'w1' => '25%',
-                'w2' => '25%',
-                'w3' => '25%',
-                'w4' => '25%',
+                'w1' => '50%',
+                'w2' => '50%',
                 'type' => 'ColumnField',
             ),
             array (

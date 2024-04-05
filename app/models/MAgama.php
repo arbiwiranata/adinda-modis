@@ -19,6 +19,7 @@ class MAgama extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'anaks' => array(self::HAS_MANY, 'Anak', 'agama_id'),
 		);
 	}
 

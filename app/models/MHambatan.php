@@ -21,7 +21,9 @@ class MHambatan extends ActiveRecord
 	{
 		return array(
 			'kurikulums' => array(self::HAS_MANY, 'Kurikulum', 'hambatan_id'),
+			'matriksPerencanaans' => array(self::HAS_MANY, 'MatriksPerencanaan', 'hambatan_id'),
 			'jenisHambatan' => array(self::BELONGS_TO, 'MJenisHambatan', 'jenis_hambatan_id'),
+			'anakHambatans' => array(self::HAS_MANY, 'AnakHambatan', 'hambatan_id'),
 		);
 	}
 
@@ -32,6 +34,14 @@ class MHambatan extends ActiveRecord
 			'jenis_hambatan_id' => 'Jenis Hambatan',
 			'nama' => 'Nama',
 		);
+	}
+	
+	public function getAllData() {
+	    $result = [];
+	    foreach(MHambatan::model()->findAll(['order' => 'nama']) as $v) {
+	        $result[$v['id']] = $v['nama'];
+	    }
+	    return $result;
 	}
 
 }

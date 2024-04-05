@@ -19,6 +19,7 @@ class MTahunAjar extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'anakTahunAjars' => array(self::HAS_MANY, 'AnakTahunAjar', 'tahun_ajar_id'),
 		);
 	}
 

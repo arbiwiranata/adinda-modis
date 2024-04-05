@@ -22,6 +22,8 @@ class MatriksPerencanaan extends ActiveRecord
 	{
 		return array(
 			'matriksPerencanaanAspeks' => array(self::HAS_MANY, 'MatriksPerencanaanAspek', 'matriks_perencanaan_id'),
+			'hambatan' => array(self::BELONGS_TO, 'MHambatan', 'hambatan_id'),
+			'anakMatriksPerencanaans' => array(self::HAS_MANY, 'AnakMatriksPerencanaan', 'matriks_perencanaan_id'),
 		);
 	}
 

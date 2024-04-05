@@ -122,9 +122,6 @@ class AdminPegawaiForm extends Pegawai {
                         'label' => 'Foto',
                         'uploadPath' => 'repo/pegawai',
                         'fileType' => 'jpg, jpeg, png',
-                        'fieldOptions' => array (
-                            'auto-grow' => 'true',
-                        ),
                         'restrict' => '1000',
                         'type' => 'UploadFile',
                     ),

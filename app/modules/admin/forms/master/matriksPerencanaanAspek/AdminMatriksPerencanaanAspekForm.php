@@ -75,7 +75,7 @@ class AdminMatriksPerencanaanAspekForm extends MatriksPerencanaanAspek {
                     'condition' => 't.matriks_perencanaan_item_id IS NULL',
                     'order' => '{[order], t.urutan}',
                     'paging' => '',
-                    'group' => '',
+                    'group' => 't.id',
                     'having' => '',
                     'join' => '',
                 ),

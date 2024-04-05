@@ -67,42 +67,6 @@ class AdminKurikulumKegiatanForm extends KurikulumKegiatan {
                 'type' => 'HiddenField',
             ),
             array (
-                'name' => 'dsKurikulumAspeks',
-                'sql' => 'SELECT *
-FROM kurikulum_aspek
-WHERE kurikulum_id = :id
-ORDER BY urutan',
-                'postData' => 'No',
-                'params' => array (
-                    ':id' => 'js: params.kurikulum.id',
-                ),
-                'type' => 'DataSource',
-            ),
-            array (
-                'name' => 'dsKurikulumTargets',
-                'sql' => 'SELECT *
-FROM kurikulum_target
-WHERE kurikulum_aspek_id = :id
-ORDER BY urutan',
-                'postData' => 'No',
-                'params' => array (
-                    ':id' => 'js: params.aspek.id',
-                ),
-                'type' => 'DataSource',
-            ),
-            array (
-                'name' => 'dsKurikulumKegiatans',
-                'sql' => 'SELECT *
-FROM kurikulum_kegiatan
-WHERE kurikulum_target_id = :id
-ORDER BY urutan',
-                'postData' => 'No',
-                'params' => array (
-                    ':id' => 'js: params.target.id',
-                ),
-                'type' => 'DataSource',
-            ),
-            array (
                 'name' => 'dsKurikulumIndikators',
                 'relationTo' => 'kurikulumIndikators',
                 'relationCriteria' => array (
@@ -121,6 +85,10 @@ ORDER BY urutan',
             array (
                 'column1' => array (
                     array (
+                        'title' => 'KURIKULUM',
+                        'type' => 'SectionHeader',
+                    ),
+                    array (
                         'label' => 'Hambatan',
                         'js' => 'params.kurikulum.hambatan',
                         'type' => 'LabelField',
@@ -131,114 +99,76 @@ ORDER BY urutan',
                         'type' => 'LabelField',
                     ),
                     array (
-                        'type' => 'Text',
-                        'value' => '<column-placeholder></column-placeholder>',
-                    ),
-                ),
-                'column2' => array (
-                    array (
-                        'type' => 'Text',
-                        'value' => '<column-placeholder></column-placeholder>',
-                    ),
-                    array (
                         'label' => 'Status',
                         'js' => 'params.kurikulum.is_aktif',
                         'type' => 'LabelField',
                     ),
-                ),
-                'w1' => '50%',
-                'w2' => '50%',
-                'type' => 'ColumnField',
-            ),
-            array (
-                'totalColumns' => '4',
-                'column1' => array (
+                    array (
+                        'type' => 'Text',
+                        'value' => '<br>',
+                    ),
+                    array (
+                        'title' => 'ASPEK',
+                        'type' => 'SectionHeader',
+                    ),
+                    array (
+                        'label' => 'Urutan',
+                        'js' => 'params.aspek.urutan',
+                        'type' => 'LabelField',
+                    ),
+                    array (
+                        'label' => 'Nama Aspek',
+                        'js' => 'params.aspek.nama',
+                        'type' => 'LabelField',
+                    ),
+                    array (
+                        'type' => 'Text',
+                        'value' => '<br>',
+                    ),
+                    array (
+                        'title' => 'TARGET',
+                        'type' => 'SectionHeader',
+                    ),
+                    array (
+                        'label' => 'Urutan',
+                        'js' => 'params.target.urutan',
+                        'type' => 'LabelField',
+                    ),
+                    array (
+                        'label' => 'Nama Target',
+                        'js' => 'params.target.nama',
+                        'type' => 'LabelField',
+                    ),
+                    array (
+                        'label' => 'Deskripsi Target',
+                        'js' => 'params.target.deskripsi',
+                        'type' => 'LabelField',
+                    ),
                     array (
                         'type' => 'Text',
                         'value' => '<column-placeholder></column-placeholder>',
-                    ),
-                    array (
-                        'name' => 'lvKurikulumAspeks',
-                        'templateForm' => 'app.modules.admin.forms.master.kurikulum.AdminKurikulumKurikulumAspeksSubform',
-                        'layout' => 'Vertical',
-                        'label' => 'Aspek',
-                        'labelWidth' => '12',
-                        'datasource' => 'dsKurikulumAspeks',
-                        'sortable' => 'No',
-                        'deletable' => 'No',
-                        'insertable' => 'No',
-                        'singleViewOption' => array (
-                            'name' => 'val',
-                            'fieldType' => 'text',
-                            'labelWidth' => 0,
-                            'fieldWidth' => 12,
-                            'fieldOptions' => array (
-                                'ng-delay' => 500,
-                            ),
-                        ),
-                        'type' => 'ListView',
                     ),
                 ),
                 'column2' => array (
                     array (
-                        'name' => 'lvKurikulumTargets',
-                        'templateForm' => 'app.modules.admin.forms.master.kurikulumAspek.AdminKurikulumAspekKurikulumTargetsSubform',
-                        'layout' => 'Vertical',
-                        'label' => 'Target',
-                        'labelWidth' => '12',
-                        'datasource' => 'dsKurikulumTargets',
-                        'sortable' => 'No',
-                        'deletable' => 'No',
-                        'insertable' => 'No',
-                        'singleViewOption' => array (
-                            'name' => 'val',
-                            'fieldType' => 'text',
-                            'labelWidth' => 0,
-                            'fieldWidth' => 12,
-                            'fieldOptions' => array (
-                                'ng-delay' => 500,
-                            ),
-                        ),
-                        'type' => 'ListView',
-                    ),
-                    array (
-                        'type' => 'Text',
-                        'value' => '<column-placeholder></column-placeholder>',
-                    ),
-                ),
-                'column3' => array (
-                    array (
                         'type' => 'Text',
                         'value' => '<column-placeholder></column-placeholder>',
                     ),
                     array (
-                        'name' => 'lvKurikulumKegiatans',
-                        'templateForm' => 'app.modules.admin.forms.master.kurikulumTarget.AdminKurikulumTargetKurikulumKegiatansSubform',
-                        'label' => 'Kegiatan',
-                        'labelWidth' => '12',
-                        'datasource' => 'dsKurikulumKegiatans',
-                        'sortable' => 'No',
-                        'deletable' => 'No',
-                        'insertable' => 'No',
-                        'singleViewOption' => array (
-                            'name' => 'val',
-                            'fieldType' => 'text',
-                            'labelWidth' => 0,
-                            'fieldWidth' => 12,
-                            'fieldOptions' => array (
-                                'ng-delay' => 500,
-                            ),
-                        ),
-                        'type' => 'ListView',
+                        'title' => 'KEGIATAN',
+                        'type' => 'SectionHeader',
                     ),
-                ),
-                'column4' => array (
-                    '<column-placeholder></column-placeholder>',
+                    array (
+                        'label' => 'Nama Kegiatan',
+                        'name' => 'nama',
+                        'type' => 'TextField',
+                    ),
                     array (
                         'name' => 'lvKurikulumIndikators',
                         'templateForm' => 'app.modules.admin.forms.master.kurikulumKegiatan.AdminKurikulumKegiatanKurikulumIndikatorsSubform',
                         'label' => 'Indikator',
-                        'labelWidth' => '12',
+                        'labelWidth' => '4',
+                        'fieldWidth' => '8',
                         'datasource' => 'dsKurikulumIndikators',
                         'singleViewOption' => array (
                             'name' => 'val',
@@ -252,10 +182,8 @@ ORDER BY urutan',
                         'type' => 'ListView',
                     ),
                 ),
-                'w1' => '25%',
-                'w2' => '25%',
-                'w3' => '25%',
-                'w4' => '25%',
+                'w1' => '50%',
+                'w2' => '50%',
                 'type' => 'ColumnField',
             ),
             array (

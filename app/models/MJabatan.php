@@ -20,6 +20,8 @@ class MJabatan extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'pegawaiJabatans' => array(self::HAS_MANY, 'PegawaiJabatan', 'jabatan_id'),
+			'anakMatriksPerencanaans' => array(self::HAS_MANY, 'AnakMatriksPerencanaan', 'jabatan_id'),
 		);
 	}
 

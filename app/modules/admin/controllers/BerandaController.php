@@ -12,7 +12,9 @@ class BerandaController extends Controller {
     }
     
     public function actionIndex() {
-        $this->renderForm("AdminBeranda");
+        $this->renderForm('AdminBeranda', null, [], [
+            'pageTitle' =>  "Beranda | " . Setting::get("app.name"), 'layout' => '//layouts/new/blank'
+        ]);
     }
 
 }

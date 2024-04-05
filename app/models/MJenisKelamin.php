@@ -19,6 +19,8 @@ class MJenisKelamin extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'pegawais' => array(self::HAS_MANY, 'Pegawai', 'jenis_kelamin_id'),
+			'anaks' => array(self::HAS_MANY, 'Anak', 'jenis_kelamin_id'),
 		);
 	}
 

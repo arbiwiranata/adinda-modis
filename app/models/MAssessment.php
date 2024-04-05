@@ -19,6 +19,7 @@ class MAssessment extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'anakAssessments' => array(self::HAS_MANY, 'AnakAssessment', 'assessment_id'),
 		);
 	}
 

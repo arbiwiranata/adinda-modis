@@ -34,6 +34,7 @@ return array (
                 'label' => 'Matriks Perencanaan',
                 'icon' => '',
                 'url' => 'admin/matriksPerencanaan',
+                'formattedUrl' => '/index.php?r=admin/matriksPerencanaan',
             ),
             array (
                 'label' => 'Kurikulum',
@@ -110,9 +111,26 @@ return array (
             array (
                 'label' => 'Orang Tua',
                 'icon' => '',
-                'url' => '#',
+                'url' => 'admin/OrangTua',
             ),
         ),
         'state' => 'collapsed',
+    ),
+    array (
+        'label' => 'Intervensi',
+        'icon' => '',
+        'url' => '#',
+        'items' => array (
+            array (
+                'label' => 'Pendaftaran Anak',
+                'icon' => '',
+                'url' => 'admin/anak',
+            ),
+            array (
+                'label' => 'Pendaftaran Proses Belajar',
+                'icon' => '',
+                'url' => 'admin/anakTahunAjar',
+            ),
+        ),
     ),
 );

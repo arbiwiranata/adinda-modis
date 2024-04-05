@@ -20,10 +20,10 @@ class MatriksPerencanaanItemController extends Controller {
             $insert = json_decode($_POST["AdminMatriksPerencanaanItemForm"]["matriksPerencanaanItemsInsert"], true);
             $update = json_decode($_POST["AdminMatriksPerencanaanItemForm"]["matriksPerencanaanItemsUpdate"], true);
             foreach($insert as &$item) {
-                $item['is_pertanyaan'] = $item['is_pertanyaan'] === 'Pertanyaan' ? 't' : 'f';
+                $item['is_pertanyaan'] = @$item['is_pertanyaan'] == 'Pertanyaan';
             }
             foreach($update as &$item) {
-                $item['is_pertanyaan'] = $item['is_pertanyaan'] === 'Pertanyaan' ? 't' : 'f';
+                $item['is_pertanyaan'] = @$item['is_pertanyaan'] == 'Pertanyaan' ? 't' : 'f';
             }
             $_POST["AdminMatriksPerencanaanItemForm"]["matriksPerencanaanItemsInsert"] = json_encode($insert);
             $_POST["AdminMatriksPerencanaanItemForm"]["matriksPerencanaanItemsUpdate"] = json_encode($update);

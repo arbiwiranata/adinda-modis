@@ -21,8 +21,9 @@ class Kurikulum extends ActiveRecord
 	public function relations()
 	{
 		return array(
-			'hambatan' => array(self::BELONGS_TO, 'MHambatan', 'hambatan_id'),
 			'kurikulumAspeks' => array(self::HAS_MANY, 'KurikulumAspek', 'kurikulum_id'),
+			'hambatan' => array(self::BELONGS_TO, 'MHambatan', 'hambatan_id'),
+			'anakTahunAjars' => array(self::HAS_MANY, 'AnakTahunAjar', 'kurikulum_id'),
 		);
 	}
 

@@ -19,6 +19,7 @@ class MJenisLayanan extends ActiveRecord
 	public function relations()
 	{
 		return array(
+			'anakTahunAjars' => array(self::HAS_MANY, 'AnakTahunAjar', 'jenis_layanan_id'),
 		);
 	}
 
